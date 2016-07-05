@@ -9,9 +9,9 @@ namespace MvcIOC.Controllers
         //
         // GET: /ProteinTracker/
 
-        public ProteinTrackerController(IProteinTrackerService proteinTrackerService)
+        public ProteinTrackerController(IProteinTrackerService proteinTrackingService)
         {
-            proteinTrackerService = proteinTrackingService;
+            this.proteinTrackingService = proteinTrackingService;
         }
 
         public ActionResult Index()
@@ -23,9 +23,9 @@ namespace MvcIOC.Controllers
         }
 
         [HttpPost]
-        public ActionResult AddProtein(string amount)
+        public ActionResult AddProtein(int amount)
         {
-            proteinTrackingService.AddProtein(int.Parse(amount));
+            proteinTrackingService.AddProtein(amount);
 
             ViewBag.Total = proteinTrackingService.Total;
             ViewBag.Goal = proteinTrackingService.Goal;

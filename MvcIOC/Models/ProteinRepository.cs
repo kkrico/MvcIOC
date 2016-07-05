@@ -2,7 +2,14 @@
 
 namespace MvcIOC.Models
 {
-    public class ProteinRepository
+    public interface IProteinRepository
+    {
+        ProteinData GetData(DateTime date);
+        void SetTotal(DateTime date, int value);
+        void SetGoal(DateTime date, int value);
+    }
+
+    public class ProteinRepository : IProteinRepository
     {
         private static ProteinData data = new ProteinData();
         public ProteinData GetData(DateTime date)
