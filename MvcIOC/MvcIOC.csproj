@@ -138,14 +138,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="Models\DebugProteinRepository.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ProteinTrackerController.cs" />
+    <Compile Include="Filters\DebugFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\DebugMessageService.cs" />
+    <Compile Include="Models\IDebugMessageService.cs" />
     <Compile Include="Models\IProteinTrackerService.cs" />
     <Compile Include="Models\ProteinData.cs" />
     <Compile Include="Models\ProteinRepository.cs" />
